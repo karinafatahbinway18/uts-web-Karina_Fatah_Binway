@@ -3,6 +3,7 @@
 session_start();
 
 include '../config/koneksi.php';
+/** @var mysqli $conn */
 
 $username = $_POST['username'];
 $password = md5 ($_POST['password']);
