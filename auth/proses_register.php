@@ -1,6 +1,6 @@
 <?php
 
-include '.. /config/koneksi.php';
+include '../config/koneksi.php';
 /** @var mysqli $conn */
 
 $nama = $_POST['nama'];
@@ -8,8 +8,8 @@ $username = $_POST['username'];
 $password = md5($_POST['password']);
 
 $query = mysqli_query($conn,
-"INSERT INTO users VALUES"
-(NULL, '$nama', '$username', '$password'));
+"INSERT INTO users VALUES
+(NULL, '$nama', '$username', '$password')");
 
 if($query){
 
@@ -20,4 +20,5 @@ if($query){
     echo "Register gagal";
 
 }
+
 ?>

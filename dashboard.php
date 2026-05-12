@@ -16,11 +16,11 @@ $jumlah = mysqli_num_rows($total);
 <html>
     <head>
         <title>Dashboard</title>
-        <link rel="stylesheet" href="assets"style.css>
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <div class="navbar">
-            <a href="dashboaard.php">Dashboard</a>
+            <a href="dashboard.php">Dashboard</a>
             <a href="buku/data_buku.php">Data buku</a>
             <a href="auth/logout.php">Logout</a>
         </div>
