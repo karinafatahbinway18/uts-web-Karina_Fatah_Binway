@@ -1,6 +1,7 @@
 <?php
 
 include '.. /config/koneksi.php';
+/** @var mysqli $conn */
 
 $nama = $_POST['nama'];
 $username = $_POST['username'];
