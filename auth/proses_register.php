@@ -7,11 +7,17 @@ $nama = $_POST['nama'];
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 
-$query = "INSERT INTO users VALUES 
-(NULL,'$nama','$username','$password')";
+$query = mysqli_query($conn,
+"INSERT INTO users VALUES"
+(NULL, '$nama', '$username', '$password'));
 
-mysqli_query($conn, $query);
+if($query){
 
-header("Location: login.php");
+    header("Location: login.php");
 
+}else{
+
+    echo "Register gagal";
+
+}
 ?>
