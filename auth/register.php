@@ -9,7 +9,7 @@
             <div class="card">
                 <h2>Register</h2>
 
-                <form action="proses register.php" method="POST">
+                <form action="proses_register.php" method="POST">
                     <input type="text" name="nama" placeholder="Nama" required>
 
                     <input type="text" name="username" placeholder="username" required>
