@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>login</title>
-        <link rel="stylesheet" href="../assets/CSS/style.css">
-    </head>
+<head>
 
-    <body>
-        <div class="container">
-            <div class="card">
-                <h2>Login</h2>
+<title>Login</title>
 
-                <form action="proses_login.php" method="POST">
-                     <input type="text" name="username" placeholder="Username" required>
+<link rel="stylesheet"
+href="../assets/CSS/style.css">
 
-                     <input type="password" name="password" placeholder="Password" required>
+</head>
 
-                     <button type="submit">Login</button>
+<body class="login-body">
 
-                </form>
+<div class="login-overlay">
 
-                <br>
+    <div class="login-card">
 
-                <a href="register.php">Belum punya akun?</a>
+        <h2>Login</h2>
 
-            </div>
-        </div>
-    </body>
+        <form action="proses_login.php"
+        method="POST">
+
+            <input type="text"
+            name="username"
+            placeholder="Username"
+            required>
+
+            <input type="password"
+            name="password"
+            placeholder="Password"
+            required>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <br>
+
+        <center>
+
+        <a href="register.php">
+            Belum punya akun?
+        </a>
+
+        </center>
+
+    </div>
+
+</div>
+
+</body>
 </html>

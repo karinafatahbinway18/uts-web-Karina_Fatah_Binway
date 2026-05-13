@@ -16,8 +16,7 @@ $row = mysqli_fetch_assoc($data);
     <body>
 
     <div class="container">
-    <div class="card">
-
+    <div class="edit-card">
         <h2>Edit Buku</h2>
 
         <form action="proses_edit.php" method="POST">
