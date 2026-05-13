@@ -107,19 +107,6 @@ if(isset($_GET['cari'])){
 
 </tr>
 
-        <a href="edit_buku.php?id=<?php echo $data['id']; ?>">
-        Edit
-        </a>
-
-        <a href="hapus_buku.php?id=<?php echo $data['id']; ?>"
-        onclick="return confirm('Yakin hapus data?')">
-        Hapus
-        </a>
-
-        </td>
-
-        </tr>
-
         <?php } ?>
 
     </table>
