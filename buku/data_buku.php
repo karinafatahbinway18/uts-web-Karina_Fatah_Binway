@@ -59,9 +59,9 @@ if(isset($_GET['cari'])){
 
     <br>
 
-    <a href="tambah_buku.php">
-        <button>Tambah Buku</button>
-    </a>
+    <a href="tambah_buku.php" class="btn-tambah">
+    + Tambah Buku
+</a>
 
     <br><br>
 
