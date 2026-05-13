@@ -1,5 +1,3 @@
-/* ================= RESET ================= */
-
 *{
     margin:0;
     padding:0;
@@ -12,7 +10,7 @@ body{
     color:white;
 }
 
-/* ================= NAVBAR ================= */
+ /* NAVBAR  */
 
 .navbar{
     width:100%;
@@ -44,7 +42,7 @@ body{
     color:#ffcf96;
 }
 
-/* ================= HERO ================= */
+/*HERO*/
 
 .hero{
     width:92%;
@@ -120,7 +118,7 @@ body{
     background:white;
 }
 
-/* ================= INFO CARD ================= */
+/*INFO CARD*/
 
 .hero-info{
     margin-top:40px;
@@ -163,14 +161,14 @@ body{
     font-weight:bold;
 }
 
-/* ================= CONTAINER ================= */
+/* CONTAINER */
 
 .container{
     width:92%;
     margin:auto;
 }
 
-/* ================= CARD ================= */
+/*CARD*/
 
 .card{
     background:#2c1b10;
@@ -189,7 +187,7 @@ body{
     color:#ffcf96;
 }
 
-/* ================= TABLE ================= */
+/*TABLE*/
 
 table{
     width:100%;
@@ -218,7 +216,7 @@ table tr:hover td{
     transition:0.3s;
 }
 
-/* ================= BUTTON ================= */
+/*BUTTON*/
 
 .btn-tambah{
     background:#ffcf96;
@@ -255,7 +253,7 @@ table tr:hover td{
     text-decoration:none;
 }
 
-/* ================= FORM ================= */
+/* FORM  */
 
 form input,
 form select,
@@ -307,7 +305,7 @@ button:hover{
     background:white;
 }
 
-/* ================= LOGIN ================= */
+/* LOGIN  */
 
 .login-body{
     height:100vh;
@@ -360,7 +358,7 @@ button:hover{
     text-decoration:none;
 }
 
-/* ================= EDIT BUKU ================= */
+/*  EDIT BUKU */
 
 .edit-card{
     background:#fffaf3;
@@ -379,7 +377,7 @@ button:hover{
     margin-bottom:25px;
 }
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE */
 
 @media(max-width:768px){
 
