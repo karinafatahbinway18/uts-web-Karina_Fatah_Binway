@@ -16,7 +16,7 @@ $jumlah = mysqli_num_rows($total);
 <html>
     <head>
         <title>Dashboard</title>
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/CSS/style.css">
     </head>
     <body>
         <div class="navbar">
