@@ -1,28 +1,83 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Tambah buku</title>
-        <link rel="stylesheet" href="../assets/CSS/style.css">
-    </head>
-    <body>
-        <div class="container">
+<head>
 
-            <div class="card">
+<title>Tambah Buku</title>
 
-                <h2>Tambah buku</h2>
+<link rel="stylesheet"
+href="../assets/CSS/style.css">
 
-                <form action="proses_tambah.php" method="POST">
-                    <input type="text" name="judul" placeholder="Judul Buku"required> <br><br>
-                    <input type="text" name="penulis" placeholder="Penulis" required><br><br>
-                    <input type="text" name="penerbit" placeholder="Penerbit" required><br><br>
-                    <input type="text" name="tahun_terbit" placeholder="Tahun Terbit" required><br><br>
-                    <input type="text" name="kategori" placeholder="Kategori"required><br><br>
+</head>
 
-                    <button type="submit">Simpan</button>
-                </form>
+<body>
 
-            </div>
+<div class="container">
 
-        </div>
-    </body>
+    <div class="edit-card">
+
+        <h2>Tambah Buku</h2>
+
+        <form action="proses_tambah.php"
+        method="POST"
+        enctype="multipart/form-data">
+
+            <input type="text"
+            name="judul"
+            placeholder="Judul Buku"
+            required>
+
+            <input type="text"
+            name="penulis"
+            placeholder="Penulis"
+            required>
+
+            <input type="text"
+            name="penerbit"
+            placeholder="Penerbit"
+            required>
+
+            <input type="text"
+            name="tahun_terbit"
+            placeholder="Tahun Terbit"
+            required>
+
+            <select name="kategori" required>
+
+                <option value="">
+                    -- Pilih Kategori --
+                </option>
+
+                <option value="Novel">
+                    Novel
+                </option>
+
+                <option value="Komik">
+                    Komik
+                </option>
+
+                <option value="Pelajaran">
+                    Pelajaran
+                </option>
+
+                <option value="Teknologi">
+                    Teknologi
+                </option>
+
+            </select>
+
+            <input type="file"
+            name="gambar"
+            required>
+
+            <button type="submit">
+                Simpan
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
 </html>

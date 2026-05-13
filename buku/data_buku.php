@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if(!isset($_SESSION['username'])){
@@ -8,109 +9,196 @@ if(!isset($_SESSION['username'])){
 include '../config/koneksi.php';
 /** @var mysqli $conn */
 
-$cari = '';
+$cari = "";
 
 if(isset($_GET['cari'])){
 
     $cari = $_GET['cari'];
 
     $query = mysqli_query($conn,
-    "SELECT * FROM buku 
-    WHERE judul LIKE '%$cari%'");
+
+    "SELECT * FROM buku
+    WHERE kategori LIKE '%$cari%'"
+
+    );
 
 }else{
 
     $query = mysqli_query($conn,
     "SELECT * FROM buku");
+
 }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Buku</title>
-    <link rel="stylesheet" href="../assets/CSS/style.css">
+
+<title>Data Buku</title>
+
+<link rel="stylesheet"
+href="../assets/CSS/style.css">
+
 </head>
 
 <body>
 
 <div class="navbar">
-    <a href="../dashboard.php">Dashboard</a>
-    <a href="data_buku.php">Data Buku</a>
-    <a href="../auth/logout.php">Logout</a>
+
+    <div class="logo">
+        📚 Magic Library
+    </div>
+
+    <div class="menu">
+
+        <a href="../dashboard.php">
+            Dashboard
+        </a>
+
+        <a href="data_buku.php">
+            Data Buku
+        </a>
+
+        <a href="../auth/logout.php">
+            Logout
+        </a>
+
+    </div>
+
 </div>
 
 <div class="container">
 
-<div class="card">
+    <div class="card">
 
-    <h2>Data Buku</h2>
+        <h2>Data Buku</h2>
 
-    <form method="GET" class="search-box">
-        <input type="text"
-        name="cari"
-        placeholder="Cari Judul Buku"
-        value="<?php echo $cari; ?>">
+        <!-- FORM CARI -->
 
-        <button type="submit">Cari</button>
+        <form method="GET">
 
-    </form>
+            <select name="cari">
 
-    <br>
+                <option value="">
+                    Semua Kategori
+                </option>
 
-    <a href="tambah_buku.php" class="btn-tambah">
-    + Tambah Buku
-</a>
+                <option value="Novel">
+                    Novel
+                </option>
 
-    <br><br>
+                <option value="Komik">
+                    Komik
+                </option>
 
-    <table border="1" cellpadding="10">
+                <option value="Pelajaran">
+                    Pelajaran
+                </option>
 
-        <tr>
-            <th>No</th>
-            <th>Judul</th>
-            <th>Penulis</th>
-            <th>Penerbit</th>
-            <th>Tahun</th>
-            <th>Aksi</th>
-        </tr>
+                <option value="Teknologi">
+                    Teknologi
+                </option>
 
-        <?php
-        $no = 1;
+            </select>
 
-        while($data = mysqli_fetch_array($query)){
-        ?>
+            <button type="submit">
+                Cari
+            </button>
 
-        <tr>
+        </form>
 
-    <td><?php echo $no++; ?></td>
-    <td><?php echo $data['judul']; ?></td>
-    <td><?php echo $data['penulis']; ?></td>
-    <td><?php echo $data['penerbit']; ?></td>
-    <td><?php echo $data['tahun_terbit']; ?></td>
+        <br>
 
-    <td>
+        <a href="tambah_buku.php"
+        class="btn-tambah">
 
-        <a href="edit_buku.php?id=<?php echo $data['id']; ?>">
-            Edit
+            Tambah Buku
+
         </a>
 
-        |
+        <br><br>
 
-        <a href="hapus_buku.php?id=<?php echo $data['id']; ?>"
-        onclick="return confirm('Yakin hapus data?')">
-            Hapus
-        </a>
+        <table>
 
-    </td>
+            <tr>
 
-</tr>
+                <th>No</th>
+                <th>Cover</th>
+                <th>Judul</th>
+                <th>Penulis</th>
+                <th>Kategori</th>
+                <th>Tahun</th>
+                <th>Aksi</th>
 
-        <?php } ?>
+            </tr>
 
-    </table>
+            <?php
+            $no = 1;
 
-</div>
+            while($data =
+            mysqli_fetch_array($query)){
+            ?>
+
+            <tr>
+
+                <td>
+                    <?php echo $no++; ?>
+                </td>
+
+                <td>
+
+                    <img
+                    src="../assets/img/<?php echo $data['gambar']; ?>"
+                    width="80"
+                    style="border-radius:10px;">
+
+                </td>
+
+                <td>
+                    <?php echo $data['judul']; ?>
+                </td>
+
+                <td>
+                    <?php echo $data['penulis']; ?>
+                </td>
+
+                <td>
+                    <?php echo $data['kategori']; ?>
+                </td>
+
+                <td>
+                    <?php echo $data['tahun_terbit']; ?>
+                </td>
+
+                <td>
+
+                    <a href="edit_buku.php?id=<?php echo $data['id']; ?>"
+                    class="btn-edit">
+
+                        Edit
+
+                    </a>
+
+                    <a href="hapus_buku.php?id=<?php echo $data['id']; ?>"
+                    class="btn-hapus"
+
+                    onclick="return confirm('Yakin hapus data?')">
+
+                        Hapus
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            <?php } ?>
+
+        </table>
+
+    </div>
+
 </div>
 
 </body>
