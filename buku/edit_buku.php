@@ -11,7 +11,7 @@ $row = mysqli_fetch_assoc($data);
 <html>
     <head>
         <title>Edit Buku</title>
-        <link rel="stylesheet" href="../assets/style.css">
+        <link rel="stylesheet" href="../assets/CSS/style.css">
     </head>
     <body>
 
