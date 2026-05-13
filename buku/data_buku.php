@@ -46,8 +46,7 @@ if(isset($_GET['cari'])){
 
     <h2>Data Buku</h2>
 
-    <form method="GET">
-
+    <form method="GET" class="search-box">
         <input type="text"
         name="cari"
         placeholder="Cari Judul Buku"
