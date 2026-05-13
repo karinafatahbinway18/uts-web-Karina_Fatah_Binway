@@ -12,10 +12,10 @@
                 <h2>Tambah buku</h2>
 
                 <form action="proses_tambah.php" method="POST">
-                    <input type="text" name="judul" placeholder="Judul Buku" required>
-                    <input type="text" name="penulis" placeholder="Penulis" required>
-                    <input type="text" name="penerbit" placeholder="Penerbit" required>
-                    <input type="text" name="tahun_terbit" placeholder="Tahun Terbit" required>
+                    <input type="text" name="judul" placeholder="Judul Buku"> <br><br>
+                    <input type="text" name="penulis" placeholder="Penulis" required><br><br>
+                    <input type="text" name="penerbit" placeholder="Penerbit" required><br><br>
+                    <input type="text" name="tahun" placeholder="Tahun" required><br><br>
 
                     <button type="submit">Simpan</button>
                 </form>
