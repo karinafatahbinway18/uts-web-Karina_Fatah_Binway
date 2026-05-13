@@ -92,7 +92,7 @@ if(isset($_GET['cari'])){
 
             <td>
 
-                <a href="edit_buku.php?id=<?php echo $data['id']; ?>">
+                <a href="edit_buku.php?id=<?php echo $data['id']; ?>">>Edit</a>
                     Edit
                 </a>
 
