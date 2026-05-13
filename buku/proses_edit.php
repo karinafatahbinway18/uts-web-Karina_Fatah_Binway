@@ -7,15 +7,21 @@ $id = $_POST['id'];
 $judul = $_POST['judul'];
 $penulis = $_POST['penulis'];
 $penerbit = $_POST['penerbit'];
-$tahun= $_POST['tahun_terbit'];
+$tahun_terbit = $_POST['tahun_terbit'];
+$kategori = $_POST['kategori'];
 
-mysqli_query($conn, "UPDATE buku SET
-judul ='$judul',
-penulis= '$penulis',
-penerbit='$penerbit',
-tahun_terbir='$tahun'
-WHERE id='$id'");
+$query = mysqli_query($conn, "UPDATE buku SET
+    judul='$judul',
+    penulis='$penulis',
+    penerbit='$penerbit',
+    tahun_terbit='$tahun_terbit',
+    kategori='$kategori'
+    WHERE id='$id'
+");
 
-header("Location: data_buku.php");
-
+if($query){
+    header("Location: data_buku.php");
+}else{
+    echo "Data gagal diupdate";
+}
 ?>
