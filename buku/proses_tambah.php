@@ -14,7 +14,7 @@ $query = mysqli_query($conn, "INSERT INTO buku VALUES(
     '$judul',
     '$penulis',
     '$penerbit',
-    '$tahun_terbit'
+    '$tahun_terbit',
     '$kategori'
 )");
 
