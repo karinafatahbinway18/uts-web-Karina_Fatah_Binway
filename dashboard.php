@@ -33,6 +33,20 @@ $jumlah = mysqli_num_rows($total);
                 </p>
                 <h3>Total buku: <?php echo $jumlah; ?> </h3>
 
+                <div class="dashboard-box">
+
+        <div class="dashboard-card">
+            <h3>Total Buku</h3>
+            <p><?php echo $jumlah; ?></p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>User Login</h3>
+            <p><?php echo $_SESSION['username']; ?></p>
+        </div>
+
+</div>
+
             </div>
 
         </div>
