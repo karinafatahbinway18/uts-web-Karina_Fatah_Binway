@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Tambah buku</title>
-        <link rel="stylesheet" href="../assets/style.css">
+        <link rel="stylesheet" href="../assets/CSS/style.css">
     </head>
     <body>
         <div class="container">
