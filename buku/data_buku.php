@@ -84,26 +84,39 @@ if(isset($_GET['cari'])){
 
         <tr>
 
-            <td><?php echo $no++; ?></td>
-            <td><?php echo $data['judul']; ?></td>
-            <td><?php echo $data['penulis']; ?></td>
-            <td><?php echo $data['penerbit']; ?></td>
-            <td><?php echo $data['tahun_terbit']; ?></td>
+    <td><?php echo $no++; ?></td>
+    <td><?php echo $data['judul']; ?></td>
+    <td><?php echo $data['penulis']; ?></td>
+    <td><?php echo $data['penerbit']; ?></td>
+    <td><?php echo $data['tahun_terbit']; ?></td>
 
-            <td>
+    <td>
 
-                <a href="edit_buku.php?id=<?php echo $data['id']; ?>">>Edit</a>
-                    Edit
-                </a>
+        <a href="edit_buku.php?id=<?php echo $data['id']; ?>">
+            Edit
+        </a>
 
-                |
+        |
 
-                <a href="hapus_buku.php?id=<?php echo $data['id']; ?>"
-                onclick="return confirm('Yakin hapus data?')">
-                    Hapus
-                </a>
+        <a href="hapus_buku.php?id=<?php echo $data['id']; ?>"
+        onclick="return confirm('Yakin hapus data?')">
+            Hapus
+        </a>
 
-            </td>
+    </td>
+
+</tr>
+
+        <a href="edit_buku.php?id=<?php echo $data['id']; ?>">
+        Edit
+        </a>
+
+        <a href="hapus_buku.php?id=<?php echo $data['id']; ?>"
+        onclick="return confirm('Yakin hapus data?')">
+        Hapus
+        </a>
+
+        </td>
 
         </tr>
 
