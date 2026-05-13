@@ -4,7 +4,7 @@ include '../config/koneksi.php';
 
 $id = $_GET['id'];
 $data = mysqli_query($conn, "SELECT * FROM buku WHERE id='$id'");
-$d = mysqli_fetch_array($data);
+$row = mysqli_fetch_assoc($data);
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +22,12 @@ $d = mysqli_fetch_array($data);
 
         <form action="proses_edit.php" method="POST">
 
-            <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-            <input type="text" name="judul" value="<?php echo $d['judul']; ?>">
-            <input type="text" name="penulis" value="<?php echo $d['penulis']; ?>">
-            <input type="text" name="penerbit" value="<?php echo $d['penerbit']; ?>">
-            <input type="text" name="tahun_terbit" value="<?php echo $d['tahun_terbit']; ?>">
+            <input type="hidden" name="id" value="<?= $row['id']; ?>">
+            <input type="text" name="judul" value="<?= $row['judul']; ?>" required><br><br>
+            <input type="text" name="penerbit" value="<?= $row['penerbit']; ?>" required><br><br>
+            <input type="text" name="tahun_terbit" value="<?= $row['tahun_terbit']; ?>" required><br><br>
+            <input type="text" name="kategori" value="<?= $row['kategori']; ?>" required><br><br>
+
             <button type="submit">Update</button>
 
 </form>
