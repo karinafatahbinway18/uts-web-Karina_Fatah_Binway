@@ -20,7 +20,6 @@ $tmp,
 );
 
 $query = mysqli_query($conn,
-
 "INSERT INTO buku VALUES(
 
 NULL,
@@ -31,9 +30,7 @@ NULL,
 '$kategori',
 '$gambar'
 
-)"
-
-);
+)");
 
 if($query){
 
