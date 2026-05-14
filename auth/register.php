@@ -14,7 +14,7 @@
 
                     <input type="text" name="username" placeholder="username" required>
 
-                    <input type="text" name="password" placeholder="password" required>
+                    <input type="text" name="password" placeholder="password" required="off">
 
                     <button type="submit">Register</button>
                 </form>

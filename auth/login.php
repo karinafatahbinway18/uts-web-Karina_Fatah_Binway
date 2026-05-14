@@ -17,8 +17,7 @@ href="../assets/CSS/style.css">
 
         <h2>Login</h2>
 
-        <form action="proses_login.php"
-        method="POST">
+        <form action="proses_login.php" method="POST">
 
             <input type="text"
             name="username"
@@ -28,7 +27,8 @@ href="../assets/CSS/style.css">
             <input type="password"
             name="password"
             placeholder="Password"
-            required>
+            required
+            autocomplete="off">
 
             <button type="submit">
                 Login
