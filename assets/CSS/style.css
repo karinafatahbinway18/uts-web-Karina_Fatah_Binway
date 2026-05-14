@@ -372,6 +372,38 @@ button:hover{
     box-shadow:0 5px 25px rgba(0,0,0,0.3);
 }
 
+/* HEADER FORM */
+
+.form-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+/* TOMBOL SILANG */
+
+.btn-close{
+    width:40px;
+    height:40px;
+
+    background:#dc2626;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    text-decoration:none;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.btn-close:hover{
+    background:#991b1b;
+    transform:scale(1.1);
+}
+
 .edit-card h2{
     color:#5c3d2e;
     margin-bottom:25px;

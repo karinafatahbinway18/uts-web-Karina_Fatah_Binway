@@ -15,7 +15,19 @@ href="../assets/CSS/style.css">
 
     <div class="edit-card">
 
-        <h2>Tambah Buku</h2>
+        <!-- HEADER -->
+        <div class="form-header">
+
+            <h2>Tambah Buku</h2>
+
+            <a href="data_buku.php"
+            class="btn-close">
+
+                ✖
+
+            </a>
+
+        </div>
 
         <form action="proses_tambah.php"
         method="POST"
