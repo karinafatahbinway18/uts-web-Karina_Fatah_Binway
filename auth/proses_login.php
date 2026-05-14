@@ -6,26 +6,37 @@ include '../config/koneksi.php';
 /** @var mysqli $conn */
 
 $username = $_POST['username'];
-$password = md5($_POST['password']);
+$password = $_POST['password'];
 
 $query = mysqli_query($conn,
-"SELECT * FROM users 
-WHERE username = '$username' 
-AND password = '$password'");
+"SELECT * FROM users WHERE username='$username'");
 
-$cek = mysqli_num_rows($query);
+$data = mysqli_fetch_assoc($query);
 
-if($cek > 0){
+if($data){
 
-    $_SESSION['username'] = $username;
+    if(password_verify($password, $data['password'])){
 
-    header("Location: ../dashboard.php");
+        $_SESSION['username'] = $username;
+
+        header("Location: ../dashboard.php");
+
+    }else{
+
+        echo "
+        <script>
+            alert('Password salah');
+            window.location='login.php';
+        </script>
+        ";
+
+    }
 
 }else{
 
     echo "
     <script>
-        alert('Login gagal');
+        alert('Username tidak ditemukan');
         window.location='login.php';
     </script>
     ";
