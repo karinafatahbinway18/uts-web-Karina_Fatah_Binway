@@ -411,6 +411,112 @@ button:hover{
 
 /*  RESPONSIVE */
 
+/* REKOMENDASI BUKU */
+
+.rekomendasi-box{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.rekomendasi-card{
+    width:250px;
+
+    background:#2c1b10;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
+
+    transition:0.3s;
+}
+
+.rekomendasi-card:hover{
+    transform:translateY(-5px);
+}
+
+.rekomendasi-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.rekomendasi-content{
+    padding:20px;
+}
+
+.rekomendasi-content h3{
+    color:#ffcf96;
+    margin-bottom:10px;
+}
+
+.rekomendasi-content p{
+    color:white;
+    font-size:15px;
+}
+
+/* STATUS BUKU */
+
+.status-tersedia{
+    background:#16a34a;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-weight:bold;
+}
+
+.status-dipinjam{
+    background:#dc2626;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-weight:bold;
+}
+
+/* TABLE TERPOPULER */
+
+.table-populer{
+    margin-top:20px;
+}
+
+.table-populer th{
+    background:#5c3d2e;
+}
+
+.table-populer td{
+    background:#fffaf3;
+}
+
+/* RESPONSIVE TAMBAHAN */
+
+@media(max-width:768px){
+
+    .rekomendasi-box{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .rekomendasi-card{
+        width:100%;
+    }
+
+}
+
 @media(max-width:768px){
 
     .navbar{
