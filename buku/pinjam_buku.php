@@ -1,4 +1,5 @@
 <?php
+
 include '../config/koneksi.php';
 /** @var mysqli $conn */
 
@@ -14,48 +15,70 @@ $row = mysqli_fetch_assoc($data);
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Pinjam Buku</title>
-<link rel="stylesheet" href="../assets/CSS/style.css">
+
+<link rel="stylesheet"
+href="../assets/CSS/style.css">
+
 </head>
+
 <body>
 
 <div class="container">
-<div class="edit-card">
 
-<h2>Pinjam Buku</h2>
+    <div class="edit-card">
 
-<form action="proses_pinjam.php"
-method="POST"></form>
+        <h2>Pinjam Buku</h2>
 
-<input type="hidden"
-name="id_buku"
-value="<?php echo $row['id']; ?>">
+        <form action="proses_pinjam.php"
+        method="POST">
 
-<input type="text"
-value="<?php echo $row['judul']; ?>"
-readonly>
+            <input type="hidden"
+            name="id_buku"
+            value="<?php echo $row['id']; ?>">
 
-<input type="text"
-name="nama_peminjam"
-placeholder="Nama Peminjam"
-required>
+            <input type="text"
 
-<label>Tanggal Pinjam</label>
-<input type="date"
-name="tanggal_pinjam"
-required>
+            value="<?php echo $row['judul']; ?>"
 
-<label>Tanggal Kembali</label>
-<input type="date"
-name="tanggal_kembali"
-required>
+            readonly>
 
-<button type="submit">
-Pinjam Buku
-</button>
+            <input type="text"
 
-</form>
+            name="nama_peminjam"
+
+            placeholder="Nama Peminjam"
+
+            required>
+
+            <label>Tanggal Pinjam</label>
+
+            <input type="date"
+
+            name="tanggal_pinjam"
+
+            required>
+
+            <label>Tanggal Kembali</label>
+
+            <input type="date"
+
+            name="tanggal_kembali"
+
+            required>
+
+            <button type="submit">
+
+                Pinjam Buku
+
+            </button>
+
+        </form>
+
+    </div>
+
 </div>
-</div>
+
 </body>
 </html>

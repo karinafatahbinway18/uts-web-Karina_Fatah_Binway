@@ -109,15 +109,30 @@ href="../assets/CSS/style.css">
 
                 <td>
 
-                    <span class="status-dipinjam">
+            <?php
+            if($data['status'] == 'Dipinjam'){
+            ?>
 
-                        <?php echo $data['status']; ?>
+                <a href="kembalikan_buku.php?id=<?php echo $data['id']; ?>"
+                class="btn-kembali">
 
-                    </span>
+                    Kembalikan
 
-                </td>
+                </a>
 
-            </tr>
+            <?php
+            }else{
+            ?>
+
+                <span class="status-kembali">
+                    Sudah Kembali
+                </span>
+
+            <?php } ?>
+
+            </td>
+
+         </tr>
 
             <?php } ?>
 
