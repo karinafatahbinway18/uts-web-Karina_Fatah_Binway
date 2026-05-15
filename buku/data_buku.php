@@ -60,6 +60,10 @@ href="../assets/CSS/style.css">
             Data Buku
         </a>
 
+        <a href="data_peminjaman.php">
+            Peminjaman
+        </a>
+
         <a href="../auth/logout.php">
             Logout
         </a>
@@ -110,12 +114,18 @@ href="../assets/CSS/style.css">
 
         <br>
 
+        <!-- TOMBOL TAMBAH KHUSUS ADMIN -->
+
+        <?php if($_SESSION['role'] == 'admin'){ ?>
+
         <a href="tambah_buku.php"
         class="btn-tambah">
 
             Tambah Buku
 
         </a>
+
+        <?php } ?>
 
         <br><br>
 
@@ -128,6 +138,7 @@ href="../assets/CSS/style.css">
                 <th>Judul</th>
                 <th>Penulis</th>
                 <th>Kategori</th>
+                <th>Status</th>
                 <th>Tahun</th>
                 <th>Aksi</th>
 
@@ -168,10 +179,34 @@ href="../assets/CSS/style.css">
                 </td>
 
                 <td>
+
+                    <?php
+                    if($data['status'] == "Tersedia"){
+                    ?>
+
+                    <span class="status-tersedia">
+                        Tersedia
+                    </span>
+
+                    <?php } else { ?>
+
+                    <span class="status-dipinjam">
+                        Dipinjam
+                    </span>
+
+                    <?php } ?>
+
+                </td>
+
+                <td>
                     <?php echo $data['tahun_terbit']; ?>
                 </td>
 
                 <td>
+
+                    <!-- KHUSUS ADMIN -->
+
+                    <?php if($_SESSION['role'] == 'admin'){ ?>
 
                     <a href="edit_buku.php?id=<?php echo $data['id']; ?>"
                     class="btn-edit">
@@ -188,6 +223,23 @@ href="../assets/CSS/style.css">
                         Hapus
 
                     </a>
+
+                    <?php } ?>
+
+                    <!-- USER & ADMIN BISA PINJAM -->
+
+                    <?php
+                    if($data['status'] == "Tersedia"){
+                    ?>
+
+                    <a href="pinjam_buku.php?id=<?php echo $data['id']; ?>"
+                    class="btn-tambah">
+
+                        Pinjam
+
+                    </a>
+
+                    <?php } ?>
 
                 </td>
 
