@@ -1,9 +1,8 @@
 <?php
-
 session_start();
-
 include '../config/koneksi.php';
 /** @var mysqli $conn */
+
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -13,34 +12,20 @@ $query = mysqli_query($conn,
 
 $data = mysqli_fetch_assoc($query);
 
-if($data){
+if($data && password_verify($password, $data['password'])){
 
-    if(password_verify($password, $data['password'])){
+    $_SESSION['username'] = $data['username'];
+    $_SESSION['role'] = $data['role'];
 
-        $_SESSION['username'] = $username;
-
-        header("Location: ../dashboard.php");
-
-    }else{
-
-        echo "
-        <script>
-            alert('Password salah');
-            window.location='login.php';
-        </script>
-        ";
-
-    }
+    header("Location:../dashboard.php");
 
 }else{
 
     echo "
     <script>
-        alert('Username tidak ditemukan');
+        alert('Login gagal');
         window.location='login.php';
     </script>
     ";
-
 }
-
 ?>
