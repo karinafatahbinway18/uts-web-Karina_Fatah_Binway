@@ -4,11 +4,9 @@
 
 <title>Tambah Buku</title>
 
-<link rel="stylesheet"
-href="../assets/CSS/style.css">
+<link rel="stylesheet"href="../assets/CSS/style.css">
 
 </head>
-
 <body>
 
 <div class="container">
